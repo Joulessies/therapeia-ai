@@ -386,7 +386,7 @@ const ChatPage = () => {
             </CardHeader>
             <CardContent className="space-y-3">
               <p className="text-sm text-red-600">
-                If you're in crisis or having thoughts of self-harm, please
+                If you&apos;re in crisis or having thoughts of self-harm, please
                 reach out immediately.
               </p>
               <div className="space-y-2">

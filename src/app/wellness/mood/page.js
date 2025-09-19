@@ -276,7 +276,7 @@ const MoodTrackerPage = () => {
                   Rate Your Mood
                 </CardTitle>
                 <p className="text-sm text-gray-600">
-                  Select the number that best represents how you're feeling
+                  Select the number that best represents how you&apos;re feeling
                   right now
                 </p>
               </CardHeader>
@@ -458,7 +458,7 @@ const MoodTrackerPage = () => {
               <Card className="bg-gradient-to-br from-pink-50 to-purple-50 border-pink-200">
                 <CardHeader>
                   <CardTitle className="text-pink-700">
-                    Today's Summary
+                    Today&apos;s Summary
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-3">

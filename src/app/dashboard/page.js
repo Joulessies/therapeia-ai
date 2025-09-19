@@ -505,8 +505,8 @@ const DashboardPage = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-red-800 mb-3">
-                  If you're experiencing a mental health crisis, don't wait.
-                  Help is available 24/7.
+                  If you&apos;re experiencing a mental health crisis, don&apos;t
+                  wait. Help is available 24/7.
                 </p>
                 <div className="space-y-2">
                   <Button
