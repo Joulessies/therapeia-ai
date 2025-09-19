@@ -236,8 +236,8 @@ export default function ResourcesPage() {
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-red-800 mb-3">
-                  If you're in crisis, please visit the Crisis Support page for
-                  immediate options.
+                  If you&apos;re in crisis, please visit the Crisis Support page
+                  for immediate options.
                 </p>
                 <Link href="/crisis">
                   <Button

@@ -412,7 +412,7 @@ const MoodTrackerPage = () => {
               <CardHeader>
                 <CardTitle>Additional Notes (Optional)</CardTitle>
                 <p className="text-sm text-gray-600">
-                  What's contributing to how you feel today?
+                  What&apos;s contributing to how you feel today?
                 </p>
               </CardHeader>
               <CardContent>

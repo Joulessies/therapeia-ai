@@ -327,13 +327,13 @@ const TherapyPage = () => {
               <CardHeader>
                 <CardTitle className="text-teal-700 flex items-center gap-2">
                   <Target className="w-5 h-5" />
-                  Today's Focus
+                  Today&apos;s Focus
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-teal-800 text-sm mb-4">
-                  "Focus on managing stress through mindful breathing and
-                  positive self-talk."
+                  &quot;Focus on managing stress through mindful breathing and
+                  positive self-talk.&quot;
                 </p>
                 <Button
                   size="sm"
@@ -380,8 +380,8 @@ const TherapyPage = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-blue-800 text-sm mb-4">
-                  Remember, you're not alone in this journey. Professional help
-                  is always available.
+                  Remember, you&apos;re not alone in this journey. Professional
+                  help is always available.
                 </p>
                 <div className="space-y-2">
                   <Button

@@ -476,14 +476,14 @@ const DashboardPage = () => {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-teal-700">
                   <Star className="w-5 h-5" />
-                  Today's Tip
+                  Today&apos;s Tip
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-teal-800 mb-3">
-                  "Take a few deep breaths whenever you feel overwhelmed. Deep
-                  breathing activates your body's relaxation response and helps
-                  reduce stress."
+                  &quot;Take a few deep breaths whenever you feel overwhelmed.
+                  Deep breathing activates your body&apos;s relaxation response
+                  and helps reduce stress.&quot;
                 </p>
                 <Button
                   size="sm"

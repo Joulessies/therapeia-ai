@@ -139,7 +139,7 @@ const ChatPage = () => {
       const fallbackResponse = {
         id: Date.now() + 1,
         message:
-          "I apologize, but I'm having some technical difficulties right now. Your message is important to me. Please try again, and if this continues, consider reaching out to a human counselor.",
+          "I apologize, but I&apos;m having some technical difficulties right now. Your message is important to me. Please try again, and if this continues, consider reaching out to a human counselor.",
         timestamp: new Date(),
         isUser: false,
         isTyping: false,

@@ -132,7 +132,7 @@ const WellnessPage = () => {
         <div className="mb-12">
           <h2 className="text-2xl font-bold text-gray-800 mb-6 flex items-center">
             <Sun className="w-6 h-6 text-yellow-500 mr-2" />
-            Today's Wellness
+            Today&apos;s Wellness
           </h2>
           <div className="grid md:grid-cols-4 gap-4">
             <Card className="border-l-4 border-l-pink-500">
@@ -352,7 +352,7 @@ const WellnessPage = () => {
                 <Link href="/wellness/mood">
                   <Button className="w-full bg-pink-600 hover:bg-pink-700 text-white">
                     <Heart className="w-4 h-4 mr-2" />
-                    Log Today's Mood
+                    Log Today&apos;s Mood
                   </Button>
                 </Link>
                 <Link href="/wellness/meditation">
@@ -381,14 +381,14 @@ const WellnessPage = () => {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Target className="w-5 h-5 text-teal-600" />
-                  Today's Wellness Tip
+                  Today&apos;s Wellness Tip
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-gray-700 mb-3">
-                  "Practice the 5-4-3-2-1 grounding technique when feeling
+                  &quot;Practice the 5-4-3-2-1 grounding technique when feeling
                   overwhelmed: Notice 5 things you see, 4 you can touch, 3 you
-                  hear, 2 you smell, and 1 you taste."
+                  hear, 2 you smell, and 1 you taste.&quot;
                 </p>
                 <Button
                   size="sm"
