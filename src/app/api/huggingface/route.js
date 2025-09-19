@@ -1,9 +1,6 @@
 import { NextResponse } from "next/server";
 import { HfInference } from "@huggingface/inference";
 
-// Initialize Hugging Face client (API key optional for free models)
-let hf = new HfInference(process.env.HUGGINGFACE_API_KEY);
-
 const SYSTEM_PROMPT = `You are Therapeia, a compassionate AI mental health companion. You provide supportive, empathetic responses to help users with their mental health concerns.
 
 Key principles:
@@ -35,6 +32,9 @@ const PREMIUM_MODELS = [
 
 export async function POST(request) {
   try {
+    // Initialize Hugging Face client only when needed
+    let hf = new HfInference(process.env.HUGGINGFACE_API_KEY);
+
     const body = await request.json();
     const { message, conversationHistory = [], mood, analysis, apiKey } = body;
 

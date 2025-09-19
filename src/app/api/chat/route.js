@@ -1,11 +1,6 @@
 import { NextResponse } from "next/server";
 import OpenAI from "openai";
 
-// Initialize OpenAI client on server-side (more secure)
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-});
-
 const SYSTEM_PROMPT = `You are Therapeia, a compassionate and professional AI mental health companion. Your role is to provide supportive, empathetic, and therapeutic responses to users seeking mental health support.
 
 CORE PRINCIPLES:
@@ -60,6 +55,11 @@ export async function POST(request) {
         { status: 500 }
       );
     }
+
+    // Initialize OpenAI client only when needed
+    const openai = new OpenAI({
+      apiKey: process.env.OPENAI_API_KEY,
+    });
 
     const body = await request.json();
     const { message, conversationHistory = [], mood, analysis } = body;

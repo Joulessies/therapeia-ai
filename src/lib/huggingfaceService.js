@@ -7,9 +7,8 @@ import { HfInference } from "@huggingface/inference";
  */
 class HuggingFaceService {
   constructor() {
-    // Initialize Hugging Face client
-    // API key is optional for many free models
-    this.hf = new HfInference(process.env.HUGGINGFACE_API_KEY);
+    // Initialize Hugging Face client lazily
+    this.hf = null;
 
     // Available free models (no API key required)
     this.freeModels = [
@@ -45,6 +44,15 @@ Key principles:
 If someone mentions crisis situations (suicide, self-harm), immediately encourage them to contact crisis support (988 Suicide & Crisis Lifeline) or emergency services.
 
 Respond as a caring mental health companion who truly wants to help.`;
+  }
+
+  /**
+   * Initialize Hugging Face client when needed
+   */
+  initializeClient() {
+    if (!this.hf) {
+      this.hf = new HfInference(process.env.HUGGINGFACE_API_KEY);
+    }
   }
 
   /**
@@ -114,6 +122,8 @@ Respond as a caring mental health companion who truly wants to help.`;
     analysis = null
   ) {
     try {
+      // Initialize client if needed
+      this.initializeClient();
       // Build conversation context
       const conversationText = this.buildConversationText(
         userMessage,
