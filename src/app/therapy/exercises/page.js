@@ -503,7 +503,7 @@ const ExercisesPage = () => {
               <CheckCircle className="w-8 h-8 text-green-600 mx-auto mb-2" />
               <h3 className="font-medium text-green-800">Exercise Complete!</h3>
               <p className="text-sm text-green-700">
-                Great job, student! You've taken another step toward better
+                Great job, student! You&apos;ve taken another step toward better
                 mental wellness.
               </p>
             </div>
@@ -543,7 +543,8 @@ const ExercisesPage = () => {
                 Student Wellness Exercises
               </h1>
               <p className="text-xl text-gray-600">
-                Evidence-based techniques for Filipino students' mental wellness
+                Evidence-based techniques for Filipino students&apos; mental
+                wellness
               </p>
             </div>
           </div>

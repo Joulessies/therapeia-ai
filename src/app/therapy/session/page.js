@@ -323,7 +323,7 @@ export default function GuidedSessionPage() {
                     student!
                   </h3>
                   <p className="text-teal-700 mb-4">
-                    You've taken an important step for your mental health.
+                    You&apos;ve taken an important step for your mental health.
                     Consider exploring study techniques or connecting with
                     campus resources.
                   </p>
