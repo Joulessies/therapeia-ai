@@ -101,14 +101,14 @@ export default function GuidedSessionPage() {
     return Math.round(((activeIdx + 1) / steps.length) * 100);
   }, [activeIdx, steps.length]);
 
-  const durationMinutes = useMemo(() => {
-    const now = new Date();
-    return Math.max(0, Math.floor((now - sessionStartRef.current) / 60000));
-  }, [activeIdx, aiByStep, notesByStep]);
+  const durationMinutes = Math.max(
+    0,
+    Math.floor((Date.now() - sessionStartRef.current.getTime()) / 60000)
+  );
 
   const recommendations = useMemo(
     () => getRecommendations(),
-    [getRecommendations, activeIdx, aiByStep, notesByStep]
+    [getRecommendations]
   );
 
   useEffect(() => {
@@ -363,7 +363,11 @@ export default function GuidedSessionPage() {
                     }`}
                   >
                     <div className="text-sm">
-                      <div className="font-medium {idx === activeIdx ? 'text-teal-800' : 'text-gray-800'}">
+                      <div
+                        className={`font-medium ${
+                          idx === activeIdx ? "text-teal-800" : "text-gray-800"
+                        }`}
+                      >
                         {s.title}
                       </div>
                       <div className="text-xs text-gray-600 line-clamp-1">
@@ -448,7 +452,7 @@ export default function GuidedSessionPage() {
                 <div className="flex items-center gap-2 text-blue-800">
                   <Heart className="w-4 h-4" />
                   <span className="text-sm">
-                    You're doing something good for yourself today.
+                    You&apos;re doing something good for yourself today.
                   </span>
                 </div>
               </CardContent>
