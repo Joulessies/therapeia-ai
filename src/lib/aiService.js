@@ -209,7 +209,11 @@ class TherapyAI {
   identifyTherapeuticNeeds(message) {
     const needs = [];
 
-    if (message.includes("anxious") || message.includes("panic")) {
+    if (
+      message.includes("anxious") ||
+      message.includes("panic") ||
+      message.includes("nervous")
+    ) {
       needs.push(
         "anxiety_management",
         "breathing_exercises",
@@ -217,7 +221,11 @@ class TherapyAI {
       );
     }
 
-    if (message.includes("sad") || message.includes("depressed")) {
+    if (
+      message.includes("sad") ||
+      message.includes("depressed") ||
+      message.includes("hopeless")
+    ) {
       needs.push(
         "mood_support",
         "behavioral_activation",
@@ -225,16 +233,47 @@ class TherapyAI {
       );
     }
 
-    if (message.includes("overwhelmed") || message.includes("stressed")) {
+    if (
+      message.includes("overwhelmed") ||
+      message.includes("stressed") ||
+      message.includes("pressure")
+    ) {
       needs.push("stress_management", "prioritization", "mindfulness");
     }
 
-    if (message.includes("relationship") || message.includes("family")) {
+    if (
+      message.includes("relationship") ||
+      message.includes("family") ||
+      message.includes("barkada") ||
+      message.includes("classmates")
+    ) {
       needs.push("relationship_support", "communication_skills");
     }
 
-    if (message.includes("work") || message.includes("job")) {
+    if (
+      message.includes("work") ||
+      message.includes("job") ||
+      message.includes("internship")
+    ) {
       needs.push("work_stress", "work_life_balance");
+    }
+
+    if (
+      message.includes("exam") ||
+      message.includes("study") ||
+      message.includes("academic") ||
+      message.includes("grades") ||
+      message.includes("thesis")
+    ) {
+      needs.push("academic_stress", "study_skills", "time_management");
+    }
+
+    if (
+      message.includes("family pressure") ||
+      message.includes("expectations") ||
+      message.includes("parents")
+    ) {
+      needs.push("family_dynamics", "boundary_setting", "communication_skills");
     }
 
     return needs;
@@ -257,12 +296,81 @@ class TherapyAI {
    */
   extractKeyTopics(message) {
     const topicKeywords = {
-      relationships: ["relationship", "partner", "family", "friends", "social"],
-      work: ["work", "job", "career", "boss", "colleague", "workplace"],
-      health: ["health", "physical", "medical", "doctor", "illness"],
-      finances: ["money", "financial", "debt", "bills", "budget"],
-      education: ["school", "university", "studies", "exam", "grades"],
-      identity: ["identity", "self", "who am i", "purpose", "meaning"],
+      relationships: [
+        "relationship",
+        "partner",
+        "family",
+        "friends",
+        "social",
+        "barkada",
+        "classmates",
+        "roommate",
+      ],
+      work: [
+        "work",
+        "job",
+        "career",
+        "boss",
+        "colleague",
+        "workplace",
+        "internship",
+        "part-time",
+      ],
+      health: [
+        "health",
+        "physical",
+        "medical",
+        "doctor",
+        "illness",
+        "sleep",
+        "eating",
+        "exercise",
+      ],
+      finances: [
+        "money",
+        "financial",
+        "debt",
+        "bills",
+        "budget",
+        "allowance",
+        "tuition",
+        "scholarship",
+      ],
+      education: [
+        "school",
+        "university",
+        "studies",
+        "exam",
+        "grades",
+        "thesis",
+        "research",
+        "professor",
+        "campus",
+        "academic",
+        "assignment",
+        "deadline",
+        "study",
+        "learning",
+      ],
+      identity: [
+        "identity",
+        "self",
+        "who am i",
+        "purpose",
+        "meaning",
+        "future",
+        "dreams",
+        "goals",
+      ],
+      family: [
+        "family",
+        "parents",
+        "siblings",
+        "relatives",
+        "family pressure",
+        "expectations",
+        "responsibility",
+      ],
     };
 
     const topics = [];
@@ -375,9 +483,9 @@ class TherapyAI {
    */
   generateCrisisResponse() {
     const crisisResponses = [
-      "I'm very concerned about what you've shared. Your safety is the most important thing right now. Please consider reaching out to a crisis hotline immediately - they have trained professionals available 24/7. In the US, you can call 988 for the Suicide & Crisis Lifeline. You don't have to go through this alone.",
-      "Thank you for trusting me with these difficult feelings. I want you to know that there is help available, and things can get better. Please reach out to emergency services or a crisis hotline right away. The National Suicide Prevention Lifeline is available 24/7 at 988. Your life has value, and there are people who want to help.",
-      "I hear that you're in tremendous pain right now. These feelings are temporary, even though they feel overwhelming. Please contact a crisis professional immediately - call 988 or text 'HELLO' to 741741. You deserve support and care during this difficult time.",
+      "I'm very concerned about what you've shared, student. Your safety is the most important thing right now. Please reach out to a crisis hotline immediately - they have trained professionals available 24/7. In the Philippines, you can call Hopeline at 0917-558-4673 or the National Center for Mental Health at 8531-9000. You don't have to go through this alone, kabayan.",
+      "Thank you for trusting me with these difficult feelings. I want you to know that there is help available, and things can get better. Please reach out to emergency services or a crisis hotline right away. For Filipino students, call Hopeline Philippines at 0917-558-4673 or In Touch Crisis Lines at 8893-7603. Your life has value, and there are people who want to help.",
+      "I hear that you're in tremendous pain right now, student. These feelings are temporary, even though they feel overwhelming. Please contact a crisis professional immediately - call Hopeline at 0917-558-4673 or the Student Support Hotline at 0966-351-4518. You deserve support and care during this difficult time.",
     ];
 
     return crisisResponses[Math.floor(Math.random() * crisisResponses.length)];
@@ -388,9 +496,9 @@ class TherapyAI {
    */
   generateGreetingResponse() {
     const greetings = [
-      "Hello! I'm Therapeia, your AI mental health companion. I'm here to provide a safe, non-judgmental space where you can share your thoughts and feelings. What's on your mind today?",
-      "Welcome! I'm glad you're here. I'm Therapeia, and I'm designed to offer support and guidance for mental health concerns. How are you feeling today, and what would you like to talk about?",
-      "Hi there! I'm Therapeia, your AI therapeutic companion. I'm here to listen, support, and help you work through whatever is on your mind. What brings you here today?",
+      "Hello, student! I'm Therapeia, your AI mental health companion designed for Filipino students. I'm here to provide a safe, non-judgmental space where you can share your thoughts and feelings about academic life, relationships, and personal growth. What's on your mind today?",
+      "Welcome, kabayan! I'm glad you're here. I'm Therapeia, and I'm designed to offer support and guidance specifically for Filipino students navigating academic stress, family expectations, and mental health concerns. How are you feeling today, and what would you like to talk about?",
+      "Hi there, student! I'm Therapeia, your AI therapeutic companion for Filipino students. I understand the unique challenges you face - from academic pressure to family expectations. I'm here to listen, support, and help you work through whatever is on your mind. What brings you here today?",
     ];
 
     return greetings[Math.floor(Math.random() * greetings.length)];
@@ -473,6 +581,14 @@ class TherapyAI {
       return this.generateStressManagementIntervention();
     }
 
+    if (therapeuticNeeds.includes("academic_stress")) {
+      return this.generateAcademicStressIntervention();
+    }
+
+    if (therapeuticNeeds.includes("family_dynamics")) {
+      return this.generateFamilyDynamicsIntervention();
+    }
+
     return this.generateGeneralIntervention(analysis);
   }
 
@@ -519,14 +635,42 @@ class TherapyAI {
   }
 
   /**
+   * Generate academic stress intervention
+   */
+  generateAcademicStressIntervention() {
+    const interventions = [
+      "Academic pressure can feel overwhelming, especially as a Filipino student. Let's break down your academic challenges. What specific subjects or assignments are causing the most stress right now? Sometimes focusing on one thing at a time can help reduce the overall pressure.",
+      "I understand how important academic success is, especially with family expectations. Let's try the Pomodoro Technique: study for 25 minutes, then take a 5-minute break. This can help with both focus and preventing burnout. What do you think about trying this approach?",
+      "When academic stress builds up, it can help to remember that grades don't define your worth as a person. You're more than your academic performance. What are some non-academic strengths or interests that bring you joy or make you feel proud?",
+      "Sometimes we put so much pressure on ourselves to be perfect students. What would 'good enough' look like for you in your current situation? Sometimes giving ourselves permission to be human can actually improve our performance.",
+    ];
+
+    return interventions[Math.floor(Math.random() * interventions.length)];
+  }
+
+  /**
+   * Generate family dynamics intervention
+   */
+  generateFamilyDynamicsIntervention() {
+    const interventions = [
+      "Family expectations can feel like a heavy burden, especially as a Filipino student. I want you to know that your feelings about family pressure are completely valid. What specific expectations from your family feel most challenging to manage right now?",
+      "It's common for Filipino students to feel torn between family expectations and personal dreams. This tension is real and difficult. What would you like your family to understand about your experience as a student?",
+      "Family relationships can be complex, especially when there are cultural expectations involved. Sometimes it helps to find a middle ground. What's one small way you could honor your family's values while also honoring your own needs?",
+      "Remember that you don't have to carry the weight of your family's expectations alone. You're allowed to have your own dreams and goals. What's one thing you wish your family knew about your journey as a student?",
+    ];
+
+    return interventions[Math.floor(Math.random() * interventions.length)];
+  }
+
+  /**
    * Generate general supportive intervention
    */
   generateGeneralIntervention(analysis) {
     const interventions = [
-      "You've shared a lot with me, and I can see how much you're dealing with. What feels like the most important thing for you to remember as you go through the rest of your day?",
-      "It takes courage to examine our thoughts and feelings this deeply. What's one insight you've had about yourself during our conversation that feels meaningful?",
-      "As we wrap up this part of our conversation, what's one small step you could take today to care for yourself, even in a tiny way?",
-      "You've shown a lot of self-awareness in our conversation. How can you use this understanding to be a little kinder to yourself moving forward?",
+      "You've shared a lot with me, and I can see how much you're dealing with as a student. What feels like the most important thing for you to remember as you go through the rest of your day?",
+      "It takes courage to examine our thoughts and feelings this deeply, especially when juggling academic responsibilities. What's one insight you've had about yourself during our conversation that feels meaningful?",
+      "As we wrap up this part of our conversation, what's one small step you could take today to care for yourself as a student, even in a tiny way?",
+      "You've shown a lot of self-awareness in our conversation. How can you use this understanding to be a little kinder to yourself moving forward, both as a student and as a person?",
     ];
 
     return interventions[Math.floor(Math.random() * interventions.length)];

@@ -29,50 +29,51 @@ import {
 const stepsDefinition = [
   {
     id: "checkin",
-    title: "Check-in",
+    title: "Student Check-in",
     description:
-      "Briefly describe how you're feeling and what's bringing you here today.",
+      "How are you feeling today? Share what's on your mind - whether it's academics, relationships, family pressure, or anything else affecting your wellbeing as a student.",
     aiPrompt:
-      "Please reflect back empathically and ask one gentle open-ended question based on this check-in. Avoid crisis resources unless clearly indicated.",
+      "Respond empathetically as a supportive counselor. Acknowledge the unique challenges Filipino students face and ask one gentle follow-up question. Be culturally sensitive and supportive.",
   },
   {
     id: "goals",
-    title: "Set Goals",
+    title: "Set Student Goals",
     description:
-      "Define 1-2 specific goals you'd like to focus on during this session.",
+      "What would you like to work on today? Think about academic stress, time management, social life balance, or personal growth goals.",
     aiPrompt:
-      "Help refine these goals using SMART framing in 2-3 short bullet points.",
+      "Help refine these goals using SMART framing, considering the student's academic and personal life balance. Provide 2-3 practical bullet points.",
   },
   {
     id: "explore",
-    title: "Explore",
+    title: "Explore Challenges",
     description:
-      "Share key thoughts, feelings, or situations related to your goals.",
+      "Share more about the situations, thoughts, or feelings related to your goals. What's been most challenging lately?",
     aiPrompt:
-      "Use active listening and offer one CBT-style reflection or question.",
+      "Use active listening and offer CBT-style reflection or questions. Consider common Filipino student experiences like family expectations, peer pressure, and academic competition.",
   },
   {
     id: "coping",
-    title: "Coping Exercise",
+    title: "Student Coping Strategies",
     description:
-      "Write a quick plan for a technique you'd like to try (e.g., breathing or grounding).",
+      "What healthy coping techniques would you like to try? Consider study breaks, breathing exercises, or connecting with friends.",
     aiPrompt:
-      "Suggest one brief evidence-based exercise with 4-6 numbered steps.",
+      "Suggest one brief, evidence-based exercise suitable for busy student life. Include 4-6 numbered steps that can be done between classes or study sessions.",
   },
   {
     id: "plan",
-    title: "Action Plan",
-    description: "List 1-3 small steps you'll take after this session.",
+    title: "Student Action Plan",
+    description:
+      "List 1-3 realistic steps you can take this week to support your mental health and academic success.",
     aiPrompt:
-      "Turn these into a short, compassionate action plan with checkboxes.",
+      "Create a compassionate action plan with checkboxes, considering the student's schedule and responsibilities. Include both academic and self-care elements.",
   },
   {
     id: "summary",
-    title: "Summary",
+    title: "Session Summary",
     description:
-      "Summarize your takeaways and anything you'd like to remember.",
+      "What are your key takeaways from today? What will you remember and apply in your student life?",
     aiPrompt:
-      "Provide a warm 3-sentence summary highlighting strengths and next steps.",
+      "Provide a warm, encouraging 3-sentence summary highlighting the student's strengths and practical next steps for their academic and personal journey.",
   },
 ];
 
@@ -180,10 +181,11 @@ export default function GuidedSessionPage() {
             </div>
             <div className="text-left">
               <h1 className="text-4xl font-bold text-teal-700 mb-2">
-                Guided Session
+                Student Wellness Session
               </h1>
               <p className="text-xl text-gray-600">
-                A structured, supportive flow to help you make progress today
+                A supportive space for Filipino students to navigate academic
+                life and personal growth
               </p>
             </div>
           </div>
@@ -216,7 +218,7 @@ export default function GuidedSessionPage() {
                   <Textarea
                     value={notesByStep[activeStep.id] || ""}
                     onChange={(e) => setNotes(activeStep.id, e.target.value)}
-                    placeholder="Type your thoughts here..."
+                    placeholder="Share your thoughts, feelings, or experiences as a student..."
                     className="min-h-[140px] border-2 focus:border-blue-300"
                   />
                 </div>
@@ -317,10 +319,13 @@ export default function GuidedSessionPage() {
               <Card className="bg-gradient-to-br from-teal-50 to-blue-50 border-teal-200">
                 <CardContent className="p-6">
                   <h3 className="text-lg font-semibold text-teal-800 mb-2 flex items-center">
-                    <CheckCircle2 className="w-5 h-5 mr-2" /> Nice work today
+                    <CheckCircle2 className="w-5 h-5 mr-2" /> Great job,
+                    student!
                   </h3>
                   <p className="text-teal-700 mb-4">
-                    Consider saving your notes or trying a short exercise next.
+                    You've taken an important step for your mental health.
+                    Consider exploring study techniques or connecting with
+                    campus resources.
                   </p>
                   <div className="flex flex-wrap gap-3">
                     <Link href="/therapy/exercises">
@@ -452,7 +457,8 @@ export default function GuidedSessionPage() {
                 <div className="flex items-center gap-2 text-blue-800">
                   <Heart className="w-4 h-4" />
                   <span className="text-sm">
-                    You&apos;re doing something good for yourself today.
+                    Taking care of your mental health is an investment in your
+                    future success, kabayan!
                   </span>
                 </div>
               </CardContent>

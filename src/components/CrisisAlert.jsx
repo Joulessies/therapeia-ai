@@ -10,22 +10,34 @@ const CrisisAlert = ({ isVisible, onDismiss }) => {
 
   const crisisResources = [
     {
-      name: "National Suicide Prevention Lifeline",
-      number: "988",
-      description: "24/7 crisis support",
+      name: "Hopeline Philippines",
+      number: "0917-558-4673",
+      description: "24/7 suicide prevention hotline",
       action: "Call Now",
     },
     {
-      name: "Crisis Text Line",
-      number: "Text HOME to 741741",
-      description: "24/7 text-based crisis support",
-      action: "Text Now",
+      name: "In Touch Crisis Lines",
+      number: "8893-7603 / 8893-7604",
+      description: "Mental health crisis support",
+      action: "Call Now",
+    },
+    {
+      name: "National Center for Mental Health",
+      number: "8531-9000",
+      description: "Mental health emergency services",
+      action: "Call Now",
     },
     {
       name: "Emergency Services",
-      number: "911",
+      number: "911 / 117",
       description: "For immediate medical emergencies",
       action: "Call 911",
+    },
+    {
+      name: "Student Support Hotline",
+      number: "0966-351-4518",
+      description: "Specialized support for Filipino students",
+      action: "Call Now",
     },
   ];
 
@@ -36,11 +48,12 @@ const CrisisAlert = ({ isVisible, onDismiss }) => {
           <Alert className="border-red-300 bg-red-100">
             <Shield className="h-4 w-4 text-red-600" />
             <AlertTitle className="text-red-800">
-              Crisis Support Available
+              Student Crisis Support - Philippines
             </AlertTitle>
             <AlertDescription className="text-red-700">
-              I'm concerned about what you've shared. Please consider reaching
-              out for immediate support.
+              I'm concerned about what you've shared. As a student, please know
+              that help is available and you don't have to face this alone,
+              kabayan.
             </AlertDescription>
           </Alert>
 
@@ -71,8 +84,12 @@ const CrisisAlert = ({ isVisible, onDismiss }) => {
                     className="ml-2 bg-red-600 hover:bg-red-700"
                     onClick={() => {
                       if (
-                        resource.number.includes("988") ||
-                        resource.number.includes("911")
+                        resource.number.includes("0917") ||
+                        resource.number.includes("8893") ||
+                        resource.number.includes("8531") ||
+                        resource.number.includes("911") ||
+                        resource.number.includes("117") ||
+                        resource.number.includes("0966")
                       ) {
                         window.location.href = `tel:${resource.number.replace(
                           /\D/g,
@@ -96,7 +113,8 @@ const CrisisAlert = ({ isVisible, onDismiss }) => {
           <div className="mt-6 pt-4 border-t border-red-200">
             <p className="text-xs text-red-600 mb-3">
               Remember: You are not alone, and this pain is temporary.
-              Professional help is available 24/7.
+              Professional help is available 24/7 in the Philippines. Your
+              mental health matters, student!
             </p>
 
             <div className="flex gap-2">
@@ -111,10 +129,10 @@ const CrisisAlert = ({ isVisible, onDismiss }) => {
               <Button
                 size="sm"
                 className="flex-1 bg-red-600 hover:bg-red-700"
-                onClick={() => (window.location.href = "tel:988")}
+                onClick={() => (window.location.href = "tel:09175584673")}
               >
                 <Phone className="w-3 h-3 mr-1" />
-                Call 988 Now
+                Call Hopeline Now
               </Button>
             </div>
           </div>

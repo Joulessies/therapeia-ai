@@ -42,11 +42,11 @@ export default function CrisisPage() {
             </div>
             <div>
               <h1 className="text-3xl font-bold text-red-700">
-                Crisis Support
+                Crisis Support - Philippines
               </h1>
               <p className="text-gray-600">
-                If you are in immediate danger, call your local emergency number
-                now.
+                If you are in immediate danger as a Filipino student, call
+                emergency services now.
               </p>
             </div>
           </div>
@@ -63,21 +63,26 @@ export default function CrisisPage() {
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-3">
-                <div className="grid md:grid-cols-3 gap-3">
-                  <Button className="bg-red-600 hover:bg-red-700">
-                    <Phone className="w-4 h-4 mr-2" /> Call 988 (US)
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
+                  <Button
+                    className="bg-red-600 hover:bg-red-700"
+                    onClick={() => (window.location.href = "tel:09175584673")}
+                  >
+                    <Phone className="w-4 h-4 mr-2" /> Call Hopeline
                   </Button>
                   <Button
                     variant="outline"
                     className="border-red-300 text-red-700 hover:bg-red-100"
+                    onClick={() => (window.location.href = "tel:88937603")}
                   >
-                    <MessageCircle className="w-4 h-4 mr-2" /> Text/Chat 988
+                    <MessageCircle className="w-4 h-4 mr-2" /> In Touch Crisis
                   </Button>
                   <Button
                     variant="outline"
                     className="border-red-300 text-red-700 hover:bg-red-100"
+                    onClick={() => (window.location.href = "tel:911")}
                   >
-                    <Ambulance className="w-4 h-4 mr-2" /> Local Emergency
+                    <Ambulance className="w-4 h-4 mr-2" /> Emergency 911
                   </Button>
                 </div>
                 <p className="text-sm text-red-800">
@@ -101,25 +106,25 @@ export default function CrisisPage() {
                     <p className="text-sm font-medium text-gray-800">
                       Warning signs
                     </p>
-                    <Textarea placeholder="Thoughts, situations, or feelings that signal risk..." />
+                    <Textarea placeholder="Academic stress, family pressure, or feelings that signal risk..." />
                   </div>
                   <div>
                     <p className="text-sm font-medium text-gray-800">
                       Coping strategies
                     </p>
-                    <Textarea placeholder="Things I can do to calm or distract myself..." />
+                    <Textarea placeholder="Study breaks, breathing exercises, or activities that help me..." />
                   </div>
                   <div>
                     <p className="text-sm font-medium text-gray-800">
                       People who can help
                     </p>
-                    <Textarea placeholder="Names and numbers of trusted contacts..." />
+                    <Textarea placeholder="Family, friends, classmates, or campus counselors..." />
                   </div>
                   <div>
                     <p className="text-sm font-medium text-gray-800">
                       Professional resources
                     </p>
-                    <Textarea placeholder="Therapist, clinic, crisis lines..." />
+                    <Textarea placeholder="Campus counselor, therapist, or Philippines crisis hotlines..." />
                   </div>
                 </div>
                 <Button className="bg-teal-600 hover:bg-teal-700">
@@ -140,31 +145,64 @@ export default function CrisisPage() {
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-3">
-                <div className="p-3 rounded-lg border">
-                  <p className="font-medium text-gray-800">United States</p>
-                  <p className="text-sm text-gray-600">
-                    988 Suicide & Crisis Lifeline (call/text/chat)
+                <div className="p-3 rounded-lg border border-red-200 bg-red-50">
+                  <p className="font-medium text-red-800">
+                    Hopeline Philippines
+                  </p>
+                  <p className="text-sm text-red-700 font-semibold">
+                    0917-558-4673
+                  </p>
+                  <p className="text-xs text-red-600">
+                    24/7 suicide prevention hotline
                   </p>
                 </div>
                 <div className="p-3 rounded-lg border">
                   <p className="font-medium text-gray-800">
-                    United Kingdom & ROI
+                    In Touch Crisis Lines
                   </p>
-                  <p className="text-sm text-gray-600">Samaritans: 116 123</p>
+                  <p className="text-sm text-gray-700 font-semibold">
+                    8893-7603 / 8893-7604
+                  </p>
+                  <p className="text-xs text-gray-600">
+                    Mental health crisis support
+                  </p>
                 </div>
                 <div className="p-3 rounded-lg border">
-                  <p className="font-medium text-gray-800">Canada</p>
-                  <p className="text-sm text-gray-600">
-                    Talk Suicide: 1-833-456-4566
+                  <p className="font-medium text-gray-800">
+                    National Center for Mental Health
+                  </p>
+                  <p className="text-sm text-gray-700 font-semibold">
+                    8531-9000
+                  </p>
+                  <p className="text-xs text-gray-600">
+                    Mental health emergency services
                   </p>
                 </div>
-                <div className="p-3 rounded-lg border">
-                  <p className="font-medium text-gray-800">Australia</p>
-                  <p className="text-sm text-gray-600">Lifeline: 13 11 14</p>
+                <div className="p-3 rounded-lg border border-orange-200 bg-orange-50">
+                  <p className="font-medium text-orange-800">
+                    Student Support Hotline
+                  </p>
+                  <p className="text-sm text-orange-700 font-semibold">
+                    0966-351-4518
+                  </p>
+                  <p className="text-xs text-orange-600">
+                    Specialized support for Filipino students
+                  </p>
+                </div>
+                <div className="p-3 rounded-lg border border-gray-200 bg-gray-50">
+                  <p className="font-medium text-gray-800">
+                    Emergency Services
+                  </p>
+                  <p className="text-sm text-gray-700 font-semibold">
+                    911 / 117
+                  </p>
+                  <p className="text-xs text-gray-600">
+                    For immediate medical emergencies
+                  </p>
                 </div>
                 <p className="text-xs text-gray-500">
-                  Numbers are provided for convenience; verify local options for
-                  your region.
+                  All numbers are for the Philippines. These services are
+                  available 24/7 for Filipino students in crisis.
                 </p>
               </CardContent>
             </Card>
@@ -178,9 +216,17 @@ export default function CrisisPage() {
               </CardHeader>
               <CardContent>
                 <ul className="list-disc ml-5 text-sm text-teal-800 space-y-1">
-                  <li>Schedule a follow-up with a professional</li>
-                  <li>Tell a trusted person how you feel</li>
+                  <li>
+                    Schedule a follow-up with a mental health professional
+                  </li>
+                  <li>
+                    Tell a trusted friend, family member, or campus counselor
+                  </li>
                   <li>Use grounding or breathing exercises</li>
+                  <li>Connect with campus mental health services</li>
+                  <li>
+                    Consider talking to your academic advisor about support
+                  </li>
                 </ul>
               </CardContent>
             </Card>

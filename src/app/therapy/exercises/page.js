@@ -305,6 +305,104 @@ const ExercisesPage = () => {
         },
       ],
     },
+    {
+      id: "student",
+      title: "Student Wellness",
+      description:
+        "Specialized techniques for managing academic stress and student life challenges",
+      icon: BookOpen,
+      color: "bg-orange-600",
+      bgColor: "bg-orange-50",
+      textColor: "text-orange-600",
+      borderColor: "border-orange-200",
+      exercises: [
+        {
+          id: "exam-calm",
+          title: "Pre-Exam Calming",
+          description: "Quick technique to reduce test anxiety before exams",
+          duration: "5 min",
+          difficulty: "Beginner",
+          benefits: [
+            "Reduces test anxiety",
+            "Improves focus",
+            "Boosts confidence",
+          ],
+          instructions: [
+            "Find a quiet spot before your exam",
+            "Take 3 deep breaths, counting to 4 on inhale",
+            "Hold for 4, exhale for 6",
+            "Repeat positive affirmations: 'I am prepared'",
+            "Visualize yourself succeeding",
+            "Feel confident and ready",
+          ],
+        },
+        {
+          id: "study-break",
+          title: "Study Break Reset",
+          description: "Recharge your mind during long study sessions",
+          duration: "10 min",
+          difficulty: "Beginner",
+          benefits: [
+            "Prevents burnout",
+            "Improves retention",
+            "Refreshes focus",
+          ],
+          instructions: [
+            "Set a timer for your study break",
+            "Step away from your study area",
+            "Do 5 minutes of light stretching",
+            "Hydrate with water",
+            "Look at something 20 feet away for 20 seconds",
+            "Take 5 deep breaths",
+            "Return to studying refreshed",
+          ],
+        },
+        {
+          id: "academic-confidence",
+          title: "Academic Confidence Builder",
+          description:
+            "Boost self-confidence for presentations and academic challenges",
+          duration: "8 min",
+          difficulty: "Intermediate",
+          benefits: [
+            "Builds confidence",
+            "Reduces presentation anxiety",
+            "Improves performance",
+          ],
+          instructions: [
+            "Think of a past academic success",
+            "Feel the pride and accomplishment",
+            "Visualize yourself succeeding in your current challenge",
+            "Repeat empowering statements about your abilities",
+            "Imagine receiving positive feedback",
+            "Feel confident in your preparation",
+            "Carry this confidence into your task",
+          ],
+        },
+        {
+          id: "family-boundaries",
+          title: "Family Expectations Balance",
+          description:
+            "Navigate family pressure while maintaining personal boundaries",
+          duration: "12 min",
+          difficulty: "Intermediate",
+          benefits: [
+            "Reduces family stress",
+            "Sets healthy boundaries",
+            "Improves communication",
+          ],
+          instructions: [
+            "Identify specific family expectations causing stress",
+            "Acknowledge your feelings about these expectations",
+            "Consider what's realistic for you right now",
+            "Think of ways to communicate your needs respectfully",
+            "Practice saying 'I appreciate your concern, and I'm working on...'",
+            "Remember your worth isn't tied to meeting every expectation",
+            "Plan one small step toward balance",
+          ],
+        },
+      ],
+    },
   ];
 
   const startExercise = (exercise) => {
@@ -405,7 +503,8 @@ const ExercisesPage = () => {
               <CheckCircle className="w-8 h-8 text-green-600 mx-auto mb-2" />
               <h3 className="font-medium text-green-800">Exercise Complete!</h3>
               <p className="text-sm text-green-700">
-                Great job completing this exercise.
+                Great job, student! You've taken another step toward better
+                mental wellness.
               </p>
             </div>
           )}
@@ -441,18 +540,19 @@ const ExercisesPage = () => {
             </div>
             <div className="text-left">
               <h1 className="text-4xl font-bold text-teal-700 mb-2">
-                Therapeutic Exercises
+                Student Wellness Exercises
               </h1>
               <p className="text-xl text-gray-600">
-                Evidence-based techniques for mental wellness
+                Evidence-based techniques for Filipino students' mental wellness
               </p>
             </div>
           </div>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Practice scientifically-proven exercises designed to reduce stress,
-            manage anxiety, improve mood, and build mental resilience. Choose
-            from breathing techniques, mindfulness practices, cognitive
-            exercises, and relaxation methods.
+            Practice scientifically-proven exercises designed specifically for
+            Filipino students to reduce academic stress, manage test anxiety,
+            improve study focus, and build mental resilience. Choose from
+            breathing techniques, mindfulness practices, cognitive exercises,
+            relaxation methods, and student-specific wellness techniques.
           </p>
         </div>
 
@@ -605,11 +705,12 @@ const ExercisesPage = () => {
           <Card className="bg-gradient-to-br from-teal-50 to-blue-50 border-teal-200">
             <CardContent className="p-6">
               <h3 className="text-xl font-bold text-teal-800 mb-2">
-                Need More Support?
+                Need More Support, Student?
               </h3>
               <p className="text-teal-700 mb-4">
-                These exercises work best when combined with regular therapy
-                sessions.
+                These exercises work best when combined with regular mental
+                health support. Remember, taking care of your mental health is
+                just as important as your academic success.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
                 <Link href="/therapy/chat">
